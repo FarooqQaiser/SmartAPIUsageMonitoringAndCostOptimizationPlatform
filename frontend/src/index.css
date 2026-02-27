@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic theme tokens for light mode */
+@layer utilities {
+  .bg-background-primary {
+    background-color: var(--background-primary);
+  }
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .text-title-primary {
+    color: var(--title-primary);
+  }
+  .text-time-range-color {
+    color: var(--time-range-color);
+  }
+}
+
+/* Dark mode overrides */
+@layer utilities {
+  .dark .bg-background-primary {
+    background-color: var(--background-primary);
+  }
+  .dark .bg-primary {
+    background-color: var(--primary);
+  }
+  .dark .text-title-primary {
+    color: var(--title-primary);
+  }
+  .dark .text-time-range-color {
+    color: var(--time-range-color);
+  }
+}
+
+/* Define the CSS variables for both light and dark mode */
+:root {
+  --background-primary: #f9f3e8;
+  --primary: #efe7d7;
+  --title-primary: #ba5300;
+}
+
+.dark {
+  --background-primary: #060c17;
+  --primary: #101828;
+  --title-primary: #45acff;
+}
