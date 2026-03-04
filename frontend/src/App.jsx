@@ -11,6 +11,7 @@ import Anomalies from "./pages/Anomalies";
 import Recommendations from "./pages/Recommendations";
 import NotificationsPage from "./components/Notifications/NotificationsPage";
 import SettingsPage from "./pages/SettingsPage";
+import AuthPages from "./pages/AuthPages";
 
 const App = () => {
   const theme = useThemeStore((state) => state.theme);
@@ -47,6 +48,7 @@ const App = () => {
           {/* Redirect any unknown route */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
+        <Route path="/auth" element={<AuthPages />} />
       </Routes>
     </BrowserRouter>
   );
