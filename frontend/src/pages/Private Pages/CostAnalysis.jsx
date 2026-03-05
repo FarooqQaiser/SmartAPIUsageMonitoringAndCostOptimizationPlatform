@@ -4,11 +4,11 @@ import {
   distributionData,
   timelineData,
   breakdownTableData,
-} from "../data/costAnalysisMockData";
-import CostTable from "../components/Tables/Cost Analysis/CostTable";
-import CostTimeline from "../components/Charts/Cost Analysis/CostTimeline";
-import CostDistribution from "../components/Charts/Cost Analysis/CostDistribution";
-import CostSummaryCards from "../components/Cards/Cost Analysis/CostSummaryCards";
+} from "../../data/costAnalysisMockData";
+import CostTable from "../../components/Tables/Cost Analysis/CostTable";
+import CostTimeline from "../../components/Charts/Cost Analysis/CostTimeline";
+import CostDistribution from "../../components/Charts/Cost Analysis/CostDistribution";
+import CostSummaryCards from "../../components/Cards/Cost Analysis/CostSummaryCards";
 
 export default function CostAnalysis() {
   return (

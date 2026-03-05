@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SettingsSidebar from "../components/Settings/SettingsSidebar";
-import SettingsContent from "../components/Settings/SettingsContent";
+import SettingsSidebar from "../../components/Settings/SettingsSidebar";
+import SettingsContent from "../../components/Settings/SettingsContent";
 
 export default function SettingsPage() {
   const [activeSection, setActiveSection] = useState("general");

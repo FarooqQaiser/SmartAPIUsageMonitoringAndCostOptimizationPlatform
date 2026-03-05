@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import RecommendationStats from "../components/Recommendations/RecommendationStats";
-import RecommendationFilters from "../components/Recommendations/RecommendationFilters";
-import RecommendationList from "../components/Recommendations/RecommendationList";
-import recommendationsData from "../data/recommendationsData";
+import RecommendationStats from "../../components/Recommendations/RecommendationStats";
+import RecommendationFilters from "../../components/Recommendations/RecommendationFilters";
+import RecommendationList from "../../components/Recommendations/RecommendationList";
+import recommendationsData from "../../data/recommendationsData";
 
 export default function RecommendationsPage() {
   const [filter, setFilter] = useState("all");

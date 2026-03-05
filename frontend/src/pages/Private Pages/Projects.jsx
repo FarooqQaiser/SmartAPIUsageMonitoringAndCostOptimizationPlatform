@@ -1,9 +1,9 @@
 // src/pages/Projects/Projects.jsx
 import React, { useState } from "react";
-import ProjectsHeader from "../components/Projects/ProjectsHeader";
-import ProjectsList from "../components/Projects/ProjectsList";
-import ProjectsEmptyState from "../components/Projects/ProjectsEmptyState";
-import CreateProjectModal from "../components/Projects/CreateProjectModal";
+import ProjectsHeader from "../../components/Projects/ProjectsHeader";
+import ProjectsList from "../../components/Projects/ProjectsList";
+import ProjectsEmptyState from "../../components/Projects/ProjectsEmptyState";
+import CreateProjectModal from "../../components/Projects/CreateProjectModal";
 
 const Projects = () => {
   const [showCreateModal, setShowCreateModal] = useState(false);

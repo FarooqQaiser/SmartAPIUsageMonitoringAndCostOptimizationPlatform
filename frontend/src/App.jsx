@@ -1,19 +1,21 @@
 // App.jsx
-import React, { useEffect } from "react";
-import Dashboard from "./pages/Dashboard";
+import { useEffect } from "react";
+import Dashboard from "./pages/Private Pages/Dashboard";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import { useThemeStore } from "./store/useThemeStore";
-import Projects from "./pages/Projects";
-import UsageAnalytics from "./pages/UsageAnalytics";
-import CostAnalysis from "./pages/CostAnalysis";
-import Anomalies from "./pages/Anomalies";
-import Recommendations from "./pages/Recommendations";
+import Projects from "./pages/Private Pages/Projects";
+import UsageAnalytics from "./pages/Private Pages/UsageAnalytics";
+import CostAnalysis from "./pages/Private Pages/CostAnalysis";
+import Anomalies from "./pages/Private Pages/Anomalies";
+import Recommendations from "./pages/Private Pages/Recommendations";
 import NotificationsPage from "./components/Notifications/NotificationsPage";
-import SettingsPage from "./pages/SettingsPage";
-import AuthPages from "./pages/AuthPages";
+import SettingsPage from "./pages/Private Pages/SettingsPage";
+import AuthPages from "./pages/Public Pages/AuthPages";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
 
-const App = () => {
+export default function App() {
   const theme = useThemeStore((state) => state.theme);
 
   useEffect(() => {
@@ -23,36 +25,28 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="projects" element={<Projects />} />
-          <Route
-            path="usage-analytics"
-            element={<UsageAnalytics title="Usage Analytics" />}
-          />
-          <Route
-            path="cost-analysis"
-            element={<CostAnalysis title="Cost Analysis" />}
-          />
-          <Route path="anomalies" element={<Anomalies title="Anomalies" />} />
-          <Route
-            path="recommendations"
-            element={<Recommendations title="Recommendations" />}
-          />
-          <Route path="alerts" element={<Placeholder title="Alerts" />} />
-
-          {/* Header nav routes */}
-          <Route path="notifications" element={<NotificationsPage />} />
-          <Route path="settings" element={<SettingsPage />} />
-
-          {/* Redirect any unknown route */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+        <Route element={<PrivateRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/usage-analytics" element={<UsageAnalytics />} />
+            <Route path="/cost-analysis" element={<CostAnalysis />} />
+            <Route path="/anomalies" element={<Anomalies />} />
+            <Route path="/recommendations" element={<Recommendations />} />
+            <Route path="/notifications" element={<NotificationsPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+          </Route>
         </Route>
-        <Route path="/auth" element={<AuthPages />} />
+
+        <Route element={<PublicRoute />}>
+          <Route path="/auth" element={<AuthPages />} />
+        </Route>
+
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 // Placeholder component for pages without real UI yet
 const Placeholder = ({ title }) => (
@@ -60,5 +54,3 @@ const Placeholder = ({ title }) => (
     {title} Page UI Coming Soon
   </div>
 );
-
-export default App;

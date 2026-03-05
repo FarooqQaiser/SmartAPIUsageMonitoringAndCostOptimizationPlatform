@@ -1,8 +1,8 @@
 import React from "react";
-import UsageChart from "../components/Charts/Dashboard/UsageChart";
-import CostChart from "../components/Charts/Dashboard/CostChart";
-import KPICards from "../components/Cards/KPICards";
-import EndpointTable from "../components/Tables/EndpointTable";
+import UsageChart from "../../components/Charts/Dashboard/UsageChart";
+import CostChart from "../../components/Charts/Dashboard/CostChart";
+import KPICards from "../../components/Cards/KPICards";
+import EndpointTable from "../../components/Tables/EndpointTable";
 
 export default function Dashboard() {
   const anomalies = [
@@ -68,8 +68,8 @@ export default function Dashboard() {
                   anomaly.severity === "high"
                     ? "bg-red-300 text-red-700"
                     : anomaly.severity === "medium"
-                    ? "bg-yellow-300 text-yellow-700"
-                    : "bg-green-300 text-green-700"
+                      ? "bg-yellow-300 text-yellow-700"
+                      : "bg-green-300 text-green-700"
                 }`}
               >
                 {anomaly.severity}

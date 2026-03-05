@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import AnomalyDetailsPanel from "../components/Anomalies/AnomalyDetailsPanel";
-import AnomalyTable from "../components/Tables/Anomalies/AnomalyTable";
-import AnomalyTimelineChart from "../components/Charts/Anomalies/AnomalyTimelineChart";
-import AnomalyFilters from "../components/Anomalies/AnomalyFilters";
-import AnomalySummaryCards from "../components/Cards/Anomalies/AnomalySummaryCards";
-import { anomaliesData } from "../data/anomaliesMockData";
+import AnomalyDetailsPanel from "../../components/Anomalies/AnomalyDetailsPanel";
+import AnomalyTable from "../../components/Tables/Anomalies/AnomalyTable";
+import AnomalyTimelineChart from "../../components/Charts/Anomalies/AnomalyTimelineChart";
+import AnomalyFilters from "../../components/Anomalies/AnomalyFilters";
+import AnomalySummaryCards from "../../components/Cards/Anomalies/AnomalySummaryCards";
+import { anomaliesData } from "../../data/anomaliesMockData";
 
 export default function Anomalies() {
   const [filter, setFilter] = useState("All");
